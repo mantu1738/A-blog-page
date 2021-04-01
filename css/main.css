@@ -13,16 +13,29 @@ body{
     /* background-color: #F8f8f8; */
     margin: 0;
     font-family: 'ubuntu', sans-serif ;
+    font: 1.125rem;
+    font-weight: 300;
+}
+
+img{
+    max-width: 100%;
+    display: block;
 }
 
 /*========================
 Header Section==============*/
 
-h1{
-    font-family: 'lora' serif;
+h1,
+h2,
+h3{
+    font-family: 'lora', serif;
     font-weight: 400;
-    font-size: 2rem;
     color: #143774;
+    margin-top: 0;
+}
+
+h1{
+    font-size: 2rem;
     margin: 0;
 }
 
@@ -34,12 +47,39 @@ h1{
     text-transform: uppercase;
 }
 
+.article-title{
+    font-size: 1.5rem;
+}
+
+.article-read-more,
+.article-info{
+ font-size: 0.875rem;
+}
+
+.article-read-more{
+    color: #1792d2;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.article-read-more:hover,
+.article-read-more:focus{
+    color: #143774;
+    text-decoration: underline;
+}
+
+.article-info{
+    margin: 2em 0;
+}
+
 /*========================
 Layout==============*/
 
 header{
     margin: 0;
-    /* text-align: center; */
+    text-align: center;
     background-color:#f8f8f8;
     padding: 2em 0;
 }
@@ -52,15 +92,33 @@ header{
 
 .container-nav{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-@media (max-width:675px) {
+
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width:675px) {
     .container-nav{
-        flex-direction: column;
+        flex-direction: row;
     }
-    header{
-        text-align: center;
+
+    .container-flex {
+        flex-direction: row;
+    }
+
+    main{
+        width: 75%;
+    }
+
+    aside{
+        width: 20%;
     }
 }
 
@@ -106,3 +164,41 @@ nav a:focus{
         margin: 0.5em 0;
     }
 }
+
+/**** main-page********/
+/*****Articles*********/
+
+.article-featured{
+    border-bottom: 1px solid #707070;
+    padding-bottom: 2em;
+    margin-top: 2em;
+}
+
+.article-recent{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+
+}
+
+@media(min-width:550px) {
+    .article-recent{
+        flex-direction: row;
+    }
+
+    .article-image{
+        /* width: 250px;
+        min-height: 250px; */
+        object-fit: cover;
+        object-position: center;
+    }
+}
+/*****changes the visual representaiton*******/
+.article-recent-main{
+    order: 2;
+}
+
+.article-recent-secondary{
+    order: 1;
+}
+
